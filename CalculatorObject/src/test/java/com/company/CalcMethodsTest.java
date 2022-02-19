@@ -91,8 +91,16 @@ public class CalcMethodsTest {
 
         String failMessage = "Expected calculator to handle double division.";
 
-        assertEquals(failMessage,6.2, calc.divide(2.5d, 3.7d), .0001);
-        assertEquals(failMessage,-5.33, calc.divide(12.8, -2.4),.0001);
-        assertEquals(failMessage,8.38, calc.divide(10.9, 1.3d),.0001);
+        assertEquals(failMessage,4, calc.divide(8d, 2d), .0001);
+        assertEquals(failMessage,-1.8255813953488373, calc.divide(3.14, -1.72d),.0001);
+        assertEquals(failMessage,1, calc.divide(1.0/3, 1.0/3),.0001);
     }
-}
+
+    @Test(expected = IllegalArgumentException.class)
+    public void divideIntException() {
+            calc.divide(2,0);
+    }
+
+    }
+
+

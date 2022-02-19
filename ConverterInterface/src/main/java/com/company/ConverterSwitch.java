@@ -41,7 +41,7 @@ public class ConverterSwitch implements Converter {
                 return "December";
 
             default:
-                return "Error: Invalid Input";
+                throw new IllegalArgumentException("Invalid input");
         }
     }
 
@@ -69,7 +69,7 @@ public class ConverterSwitch implements Converter {
                return "Saturday";
 
             default:
-               return "Error: Invalid Input";
+                throw new IllegalArgumentException("Invalid input");
 
 
         }

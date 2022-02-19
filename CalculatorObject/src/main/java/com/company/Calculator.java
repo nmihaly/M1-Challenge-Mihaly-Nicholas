@@ -27,16 +27,16 @@ public class Calculator {
 
 
 
-        System.out.println(CalcMethods.add(int1));
-        System.out.println(CalcMethods.subtract(int2, int3));
-        System.out.println(CalcMethods.multiply(int4, int5));
-        System.out.println(CalcMethods.divide(int6, int7));
-        System.out.println(CalcMethods.divide2(int6, int8));
+        System.out.format("2 + 2 = %s%n",CalcMethods.add(int1));
+        System.out.format("23 - 52 = %s%n",CalcMethods.subtract(int2, int3));
+        System.out.format("34 * 2 = %s%n",CalcMethods.multiply(int4, int5));
+        System.out.format("12 / 3 = %s%n",CalcMethods.divide(int6, int7));
+        System.out.format("12 / 7 = %s%n",CalcMethods.divide2(int6, int8));
 
-        System.out.println(CalcMethods.add(double1, double2));
-        System.out.println(CalcMethods.multiply(double3, double4));
-        System.out.println(CalcMethods.subtract(double5, double6));
-        System.out.println(CalcMethods.divide(double7, double8));
+        System.out.format("3.4 + 2.3 = %s%n",CalcMethods.add(double1, double2));
+        System.out.format("6.7 * 4.4 = %s%n",CalcMethods.multiply(double3, double4));
+        System.out.format("5.5 - 0.5 = %s%n",CalcMethods.subtract(double5, double6));
+        System.out.format("10.8 / 2.2 = %s%n",CalcMethods.divide(double7, double8));
     }
 
 

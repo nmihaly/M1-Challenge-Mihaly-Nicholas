@@ -21,15 +21,26 @@ public void ifElseTest() {
 
     assertEquals("January", convertIf.convertMonth(1));
     assertEquals("Tuesday", convertIf.convertDay(3));
-    assertEquals("Error: Invalid input", convertIf.convertMonth(14));
-    assertEquals("Error: Invalid input", convertIf.convertDay(8));
+
 }
 
 @Test
 public void switchTest() {
     assertEquals("January", convertSwitch.convertMonth(1));
     assertEquals("Tuesday", convertSwitch.convertDay(3));
-    assertEquals("Error: Invalid input", convertSwitch.convertMonth(14));
-    assertEquals("Error: Invalid input", convertSwitch.convertDay(8));
+
 }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void shouldThrowWithInvalidInputs(){
+       convertIf.convertMonth(0);
+       convertIf.convertMonth(13);
+       convertIf.convertDay(0);
+       convertIf.convertDay(8);
+        convertSwitch.convertMonth(0);
+        convertSwitch.convertMonth(13);
+        convertSwitch.convertDay(0);
+        convertSwitch.convertDay(8);
+
+    }
 }

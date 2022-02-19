@@ -15,7 +15,11 @@ public class CalcMethods {
     }
 
     public static int divide(int int6, int int7) {
+
+        if(int7 == 0)
+            throw new IllegalArgumentException("Cannot divide by zero!");
         return int6 / int7;
+
     }
 
     public static int divide2(int int6, int int8) {
@@ -33,7 +37,11 @@ public class CalcMethods {
         return double5 - double6;
     }
     public static double divide(double double7, double double8) {
-        return double7 + double8;
+
+        if (double8 == 0)
+            throw new IllegalArgumentException("Cannot divide by zero!");
+        return double7 / double8;
+
     }
 
 

@@ -28,38 +28,30 @@ public class ConverterIf implements Converter {
         } else if (monthNumber == 12) {
             return "December";
         } else {
-            return "Error: Invalid input";
+            throw new IllegalArgumentException("Invalid input");
         }
 
     }
 
     public String convertDay(int dayNumber) {
         if (dayNumber == 1) {
-            return "January";
+            return "Sunday";
         } else if (dayNumber == 2) {
-            return "February";
+            return "Monday";
         } else if (dayNumber == 3) {
-            return "March";
+            return "Tuesday";
         } else if (dayNumber == 4) {
-            return "April";
+            return "Wednesday";
         } else if (dayNumber == 5) {
-            return "May";
+            return "Thursday";
         } else if (dayNumber == 6) {
-            return "June";
+            return "Friday";
         } else if (dayNumber == 7) {
-            return "July";
+            return "Saturday";
         } else if (dayNumber == 8) {
-            return "August";
-        } else if (dayNumber == 9) {
-            return "September";
-        } else if (dayNumber == 10) {
-            return "October";
-        } else if (dayNumber == 11) {
-            return "November";
-        } else if (dayNumber == 12) {
-            return "December";
+            return "Sunday";
         } else {
-            return "Error: Invalid Input";
+            throw new IllegalArgumentException("Invalid input");
         }
     }
 }
