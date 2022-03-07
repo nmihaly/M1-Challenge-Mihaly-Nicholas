@@ -14,23 +14,27 @@ public class IceCreamTest {
     }
 
     @Test
-    public void shouldMeasureRefillQuantity() {
-        iceCream.refillQuantity(64.5);
-        assertEquals(192, iceCream.getQuantity());
+    public void shouldAddSprinkles() {
+        iceCream.addSprinkles();
+        assertTrue(iceCream.hasSprinkles());
+    }
+
+    @Test
+    public void shouldHaveNoSprinkles() {
+        iceCream.noSprinkles();
+        assertFalse(iceCream.hasSprinkles());
     }
 
     @Test
     public void shouldMeasureQuantityAfterScoops() {
         iceCream.scoop(3);
-        iceCream.getQuantity();
-        assertEquals(98, iceCream.getQuantity());
+        assertEquals(23, iceCream.getQuantity());
     }
-
 
     @Test
-    public void shouldReduceQuantityPerSample() {
-        iceCream.sample();
-        iceCream.sample();
-        assertEquals(126, iceCream.getQuantity());
+    public void shouldGetSalePrice() {
+        iceCream.sell(2);
+        assertEquals(7,iceCream.getPrice(), 000.1);
     }
+
 }

@@ -4,7 +4,7 @@ public class IceCream {
     private String flavor;
     private double salePrice;
     private double productionCost;
-    private int productionTime;
+    private int productionTime; // in minutes
     private String[] ingredients;
 
     public IceCream(String flavor, double salePrice, double productionCost, int productionTime, String[] ingredients) {
@@ -15,13 +15,23 @@ public class IceCream {
         this.ingredients = ingredients;
     }
 
-    public void replaceIngredient(int index, String ingredient) {
-        ingredients[index] = ingredient;
+
+    public int totalProductionTime(int gallons) {
+        this.productionTime = productionTime * gallons;
+        System.out.println("It will take " + this.productionTime + " minutes to make " + gallons + " gallons of " + flavor + " ice cream.");
+        return productionTime;
     }
 
-    public void orderFlavor(double quantity) {
-        System.out.format("%d gallons of %s ice cream will take %d hours to produce%n", quantity, flavor, productionTime * quantity);
-        System.out.format("It will cost %.2f to produce and should be sold at %.2f %n", productionCost * quantity, salePrice * quantity);
+    public double totalSalePrice(int gallons) {
+        this.salePrice = salePrice * gallons;
+        System.out.println("It will cost " + this.salePrice + " dollars to buy " + gallons + " gallons of " + flavor + " ice cream.");
+        return salePrice;
+    }
+
+    public double productionCostPerMinute() {
+        this.salePrice = salePrice/productionTime;
+        System.out.println("It will cost " + this.salePrice + " dollars per minute to make a gallon of " + flavor + " ice cream.");
+        return salePrice;
     }
 
     public String getFlavor() {
@@ -32,24 +42,24 @@ public class IceCream {
         this.flavor = flavor;
     }
 
-    public double getSalePrice(double quantity) {
-        return salePrice * quantity;
+    public double getSalePrice() {
+        return salePrice;
     }
 
     public void setSalePrice(double salePrice) {
         this.salePrice = salePrice;
     }
 
-    public double getProductionCost(double quantity) {
-        return productionCost * quantity;
+    public double getProductionCost() {
+        return productionCost;
     }
 
     public void setProductionCost(double productionCost) {
         this.productionCost = productionCost;
     }
 
-    public int getProductionTime(int quantity) {
-        return productionTime * quantity;
+    public int getProductionTime() {
+        return productionTime;
     }
 
     public void setProductionTime(int productionTime) {

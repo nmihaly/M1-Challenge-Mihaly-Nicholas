@@ -4,27 +4,38 @@ public class IceCream {
 
     private String flavor;
     private double price;
-    // quantity in ounces
     private int quantity;
+    private boolean sprinkles;
 
     public IceCream(String flavor, double price) {
         this.flavor = flavor;
         this.price = price;
-        this.quantity = 128;
+        this.quantity = 32; //32 ounces in a tub.
     }
 
-    public void refillQuantity(double amount) {
-        this.quantity += amount;
+    public void addSprinkles() {
+     sprinkles = true;
+    }
+
+    public void noSprinkles() {
+        sprinkles = false;
+    }
+
+    public boolean hasSprinkles() {
+        return sprinkles;
     }
 
     public void scoop(int scoops) {
-        this.quantity -= scoops * 10;
-        System.out.format("Thanks that will be %f dollars!", price * scoops);
+        this.quantity -= scoops * 3; // 3 ounces of ice cream in a scoop.
+        System.out.format("We have " + this.quantity + " ounces of " + flavor +" ice cream left.");
     }
 
-    public void sample() {
-        this.quantity--;
+    public double sell(int scoops) {
+       this.price = price * scoops;
+       System.out.println("Your total price is " + this.price + " dollars.");
+       return price;
     }
+
 
     public String getFlavor() {
         return flavor;
