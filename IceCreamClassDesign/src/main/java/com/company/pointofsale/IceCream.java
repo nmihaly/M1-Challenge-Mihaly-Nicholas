@@ -25,7 +25,7 @@ public class IceCream {
         return sprinkles;
     }
 
-    public void scoop(int scoops) {
+    public void scoopIceCream(int scoops) {
         this.quantity -= scoops * 3; // 3 ounces of ice cream in a scoop.
         System.out.format("We have " + this.quantity + " ounces of " + flavor +" ice cream left.");
     }

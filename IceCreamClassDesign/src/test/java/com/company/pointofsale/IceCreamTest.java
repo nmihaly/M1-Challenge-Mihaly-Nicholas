@@ -27,7 +27,7 @@ public class IceCreamTest {
 
     @Test
     public void shouldMeasureQuantityAfterScoops() {
-        iceCream.scoop(3);
+        iceCream.scoopIceCream(3);
         assertEquals(23, iceCream.getQuantity());
     }
 
